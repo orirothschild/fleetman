@@ -1,4 +1,5 @@
 #!/bin/bash
+./env.sh
 kops update cluster ${NAME} --yes
 sleep 10m
 helm install monitoring stable/prometheus-operator
