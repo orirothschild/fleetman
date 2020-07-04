@@ -21,7 +21,8 @@ spec:
       volumes:
         - name: mongo-persistent-storage
           # pointer to the configuration of HOW we want the mount to be implemented
-          # i will have what he is having kind of thing
+          # i will have what he is having kind
+          persistentVolumeClaim:
             claimName: mongo-pvc
 ---
 kind: Service

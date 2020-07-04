@@ -16,6 +16,9 @@ spec:
       containers:
       - name: queue
         image: richardchesterwood/k8s-fleetman-queue:release2
+        resources: # what this pod needs at least, so node will sparse between nodes
+          requests:
+            memory: 300Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -68,7 +71,7 @@ spec:
   selector:
     matchLabels:
       app: api-gateway
-  replicas: 3
+  replicas: 1
   template: # template for the pods
     metadata:
       labels:
