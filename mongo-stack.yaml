@@ -18,6 +18,10 @@ spec:
         volumeMounts:
           - name: mongo-persistent-storage
             mountPath: /data/db   # this is the data we wish to mount to the voulume claim
+        resources: # what this pod needs at least, so node will sparse between nodes
+          requests:
+            memory: 500Mi
+            cpu: 500m
       volumes:
         - name: mongo-persistent-storage
           # pointer to the configuration of HOW we want the mount to be implemented
