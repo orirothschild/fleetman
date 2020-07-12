@@ -5,9 +5,7 @@ kops edit cluster --name ${NAME}
 kops update cluster ${NAME} --yes
 sleep 6m
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
-kubectl apply -f .
-kubectl delete secret alertmanager-monitoring-prometheus-oper-alertmanager
+kubectl apply -f ../aws_storage/storage-aws.yaml
 helm install monitoring stable/prometheus-operator
-helm install spinnaker  stable/spinnaker --version 2.0.0-rc9
 kubectl delete secret alertmanager-monitoring-prometheus-oper-alertmanager
 kubectl create secret generic alertmanager-monitoring-prometheus-oper-alertmanager --from-file ../secrets/alertmanager.yaml
