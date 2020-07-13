@@ -15,7 +15,6 @@ spec:
       port: 80
       
   type: ClusterIP
----
 apiVersion: v1
 kind: Service
 metadata:
