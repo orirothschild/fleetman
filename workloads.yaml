@@ -68,6 +68,9 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
+        envFrom:
+        - configMapRef:
+            name: database-config
         resources: # what this pod needs at least, so node will sparse between nodes
           requests:
             memory: 200Mi
