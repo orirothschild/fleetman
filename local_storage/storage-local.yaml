@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: local-storage0
+   name: mongo-pvc
 spec:
   storageClassName: mylocalstorage0
   accessModes:
@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-storage0
+   name: mongo-pv
 spec:
   storageClassName: mylocalstorage0
   capacity:

@@ -93,13 +93,13 @@ spec:
       containers:
       - name: api-gateway
         image: richardchesterwood/k8s-fleetman-api-gateway:release2
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: production-microservice
         readinessProbe:
           httpGet:
             path: /
             port: 8080
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: production-microservice
         resources: # what this pod needs at least, so node will sparse between nodes
           requests:
             memory: 200Mi
