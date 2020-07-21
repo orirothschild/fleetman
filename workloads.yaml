@@ -49,14 +49,14 @@ spec:
 
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: position-tracker
 spec:
   selector:
     matchLabels:
       app: position-tracker
-  replicas: 1
+#  replicas: 1
   template: # template for the pods
     metadata:
       labels:
